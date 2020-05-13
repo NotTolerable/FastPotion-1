@@ -23,25 +23,21 @@ public class PotionListener implements Listener {
 		}
 		
 		PotionMeta meta = (PotionMeta) thrown.getItem().getItemMeta();
+		
 		if(meta.getBasePotionData().getType() == PotionType.INSTANT_HEAL) {
-			
-			//Player p = (Player) thrown.getShooter();
-			
-			//int amp = (meta.getBasePotionData().isUpgraded()) ? 1 : 0;
-			
 			if(thrown.getShooter() instanceof Player) {
 				Vector velocity = thrown.getVelocity();
 				velocity.setY(velocity.getY()-4D);
 				thrown.setVelocity(velocity);
 			}
-			//thrown.remove();
-			//p.getInventory().getItemInMainHand().setAmount(p.getInventory().getItemInMainHand().getAmount()-1);
 		}
 	}
 	
 	@EventHandler
-	public void onPotSplash(PotionSplashEvent e) {		
+	public void onPotSplash(PotionSplashEvent e) {	
+		
 		PotionMeta pm = (PotionMeta) e.getPotion().getItem().getItemMeta();
+		
 		if(pm.getBasePotionData().getType() == PotionType.INSTANT_HEAL) { 
 			if(e.getEntity().getShooter() instanceof Player) {
 				Player player = (Player) e.getEntity().getShooter();
