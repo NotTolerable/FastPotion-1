@@ -27,7 +27,7 @@ public class PotionListener implements Listener {
 		if(meta.getBasePotionData().getType() == PotionType.INSTANT_HEAL) {
 			if(thrown.getShooter() instanceof Player) {
 				Vector velocity = thrown.getVelocity();
-				velocity.setY(velocity.getY()-4D);
+				velocity.setY(velocity.getY()-4.0D);
 				thrown.setVelocity(velocity);
 			}
 		}
