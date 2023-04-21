@@ -29,6 +29,7 @@ public class PotionListener implements Listener {
 				Vector velocity = thrown.getVelocity();
 				velocity.setY(velocity.getY()-4.0D);
 				thrown.setVelocity(velocity);
+				thrown.setRadius(0);
 			}
 		}
 	}
